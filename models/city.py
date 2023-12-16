@@ -10,7 +10,6 @@ class City(BaseModel):
     name = ""
 
     def __init__(self, *args, **kwargs):
-       
        """Instance Constructor.
 
         args

@@ -17,13 +17,11 @@ class BaseModel:
         created_at: date created at.
         updated_at: date updated at.
         """
-       
-       if not kwargs:
+        if not kwargs:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-       
        else:
             for k, v in kwargs.items():
                 if k != "__class__":
@@ -46,10 +44,8 @@ class BaseModel:
 
         update atr updated_at
         """
-        
         self.updated_at = datetime.now()
         models.storage.save()
-
     def to_dict(self):
         """To_dict.
 
