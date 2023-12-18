@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Defines unittests for models/engine/file_storage.py"""
 import os
 import json
@@ -75,7 +74,6 @@ class TestFileStorage_methods(unittest.TestCase):
             models.storage.all(None)
 
     def test_new(self):
-
         """Test for newly added objects and access"""
         bm = BaseModel()
         us = User()
@@ -112,7 +110,6 @@ class TestFileStorage_methods(unittest.TestCase):
             models.storage.new(BaseModel(), 1)
 
     def test_save(self):
-        
         """Test for behaviour of save method for args"""
         bm = BaseModel()
         us = User()
@@ -146,7 +143,6 @@ class TestFileStorage_methods(unittest.TestCase):
             models.storage.save(None)
 
     def test_reload(self):
-        
         """Test created & stored model objects persisting in json file"""
         bm = BaseModel()
         us = User()
