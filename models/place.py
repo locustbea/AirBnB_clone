@@ -1,14 +1,27 @@
 #!/usr/bin/python3
-"""city model."""
-
+"""Defines Place class"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """city class."""
+    """Represents a place.
 
-    city_id = ""  # City.id
-    user_id = ""  # User.id
+    Attributes:
+        city_id (str): The City id.
+        user_id (str): The User id.
+        name (str): The name of the place.
+        description (str): The description of the place.
+        number_rooms (int): The number of rooms of the place.
+        number_bathrooms (int): The number of bathrooms of the place.
+        max_guest (int): The maximum number of guests of the place.
+        price_by_night (int): The price by night of the place.
+        latitude (float): The latitude of the place.
+        longitude (float): The longitude of the place.
+        amenity_ids (list): A list of Amenity ids.
+    """
+
+    city_id = ""
+    user_id = ""
     name = ""
     description = ""
     number_rooms = 0
@@ -17,22 +30,4 @@ class Place(BaseModel):
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    amenity_ids = ""  # Amenity.id
-
-    def __init__(self, *args, **kwargs):
-
-        """Instance Constructor.
-        args
-            city_id (str): The unique identifier for the city.
-            user_id (str): The ID of the user associated with the city.
-            name (str): The name of the city.
-            description (str): A description of the city.
-            number_rooms (int): The number of rooms available in the city.
-            number_bathrooms (int): The number of bathrooms in the city.
-            max_guest (int): The maximum number of guests allowed in the city.
-            price_by_night (int): The price per night for staying in the city.
-            latitude (float): The latitude coordinate of the city's location.
-            longitude (float): The longitude coordinate of the city's location.
-            amenity_ids (list): A list of IDs of amenities in the city.
-        """
-        super().__init__(*args, **kwargs)
+    amenity_ids = []
