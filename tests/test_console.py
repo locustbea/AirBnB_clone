@@ -12,7 +12,6 @@ from unittest.mock import patch
 
 
 class TestHBNBCommand_prompting(unittest.TestCase):
-
     """Unittests for testing prompting of HBNB command interpreter"""
 
     def test_prompt_string(self):
@@ -45,7 +44,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_EOF(self):
-    
         """Checks the help message for the EOF command"""
         h = "EOF signal to exit the program."
         with patch("sys.stdout", new=StringIO()) as output:
@@ -53,7 +51,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_show(self):
-        
         """Checks the help message for the show command"""
         h = ("Usage: show <class> <id> or <class>.show(<id>)\n        "
              "Display the string representation of a class instance of"
@@ -63,7 +60,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_destroy(self):
-        
         """Checks the help message for the destroy command"""
         h = ("Usage: destroy <class> <id> or <class>.destroy(<id>)\n        "
              "Delete a class instance of a given id.")
@@ -72,7 +68,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_all(self):
-        
         """Checks the help message for the all command"""
         h = ("Usage: all or all <class> or <class>.all()\n        "
              "Display string representations of all instances of a given class"
@@ -83,7 +78,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_count(self):
-        
         """Checks the help message for the count command"""
         h = ("Usage: count <class> or <class>.count()\n        "
              "Retrieve the number of instances of a given class.")
@@ -92,7 +86,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help_update(self):
-        
         """Checks the help message for the update command"""
         h = ("Usage: update <class> <id> <attribute_name> <attribute_value> or"
              "\n       <class>.update(<id>, <attribute_name>, <attribute_value"
@@ -104,7 +97,6 @@ class TestHBNBCommand_help(unittest.TestCase):
             self.assertEqual(h, output.getvalue().strip())
 
     def test_help(self):
-        
         """Checks the help message for the general help command"""
         h = ("Documented commands (type help <topic>):\n"
              "========================================\n"
