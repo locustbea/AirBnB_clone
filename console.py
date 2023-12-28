@@ -2,6 +2,8 @@
 """Console module."""
 
 import cmd
+import re
+from shlex import split
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -17,8 +19,8 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
     classes_dict = {"BaseModel": BaseModel, "State": State, "State": State,
-                    "City": City, "Amenity": Amenity,
-                    "Place": Place, "Review": Review, "User": User}
+            "City": City, "Amenity": Amenity,
+            "Place": Place, "Review": Review, "User": User}
 
     def do_EOF(self, line):
         """EOF command to exit the program."""
@@ -201,7 +203,7 @@ class HBNBCommand(cmd.Cmd):
                     for s in value_dict_list:
                         s = s.split(":")
                         argument = class_argument + ' ' + id_argument + \
-                            ' ' + s[0][1:-1] + ' ' + s[1]
+                                ' ' + s[0][1:-1] + ' ' + s[1]
                         HBNBCommand.do_update(self, argument)
                         key = class_argument + '.' + id_argument
                         if key not in storage.all().keys():
@@ -209,7 +211,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     # If eval fails, use the attribute and value pattern
                     argument = class_argument + ' ' + id_argument + \
-                        ' ' + name_argument + ' ' + value_argument
+                            ' ' + name_argument + ' ' + value_argument
                     HBNBCommand.do_update(self, argument)
 
             else:
